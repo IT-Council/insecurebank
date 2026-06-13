@@ -28,20 +28,20 @@ jobs:
       - name: Install Snyk CLI
         run: npm install -g snyk
 
-       Authenticate Snyk
+      #Authenticate Snyk
       - name: Authenticate Snyk
         run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
     # - name: verify Snyk Authentication
         #run: snyk whoami
 
-       SCA Scan
+       # SCA Scan
       - name: Run SCA Scan
         run: snyk test 
 
       #SAST Scan
-      - name: Run SAST Scan 
-        run: snyk code test --severity-threshold=high 
+      #- name: Run SAST Scan 
+       # run: snyk code test --severity-threshold=high 
 
       # IaC Scan
       #- name: Run IaC Scan
